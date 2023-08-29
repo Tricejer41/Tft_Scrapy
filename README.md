@@ -1,6 +1,6 @@
 # Proyecto Scrapy TFTChampionData
 
-![Logo de Scrapy](https://scrapy.org/img/logo.png)
+![Logo de Scrapy](https://repository-images.githubusercontent.com/529502/dab2bd00-0ed2-11eb-8588-5e10679ace4d)
 
 ## Descripción
 
