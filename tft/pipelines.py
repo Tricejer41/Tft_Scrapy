@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-# Define aquí tus pipelines de elementos
+# Define your item pipelines here
 #
-# No olvides agregar tu pipeline a la configuración ITEM_PIPELINES
-# Consulta: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
+# Don't forget to add your pipeline to the ITEM_PIPELINES setting
+# See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 import scrapy
 from scrapy import signals
@@ -13,7 +13,7 @@ from scrapy.exceptions import DropItem
 from scrapy import Request
 import csv
 
-class TFTChampionDataPipeline(object):
+class TftPipeline(object):
     def __init__(self):
         self.files = {}
 
@@ -25,16 +25,10 @@ class TFTChampionDataPipeline(object):
         return pipeline
 
     def spider_opened(self, spider):
-        file = open('%s_champion_data.csv' % spider.name, 'w+b')
+        file = open('%s_items.csv' % spider.name, 'w+b')
         self.files[spider] = file
         self.exporter = CsvItemExporter(file)
-        self.exporter.fields_to_export = [
-            'summoner', 'lps', 'wins', 'tops', 'firstChampName',
-            'firstChampPlays', 'secondChampName', 'secondChampPlays',
-            'thirdChampName', 'thirdChampPlays', 'fourthChampName',
-            'fourthChampPlays', 'fifthChampName', 'fifthChampPlays',
-            'lastDay', 'tier'
-        ]
+        self.exporter.fields_to_export = ['summoner', 'lps', 'wins', 'tops', 'firstChampName', 'firstChampPlays', 'secondChampName', 'secondChampPlays', 'thirdChampName','thirdChampPlays','fourthChampName','fourthChampPlays','fifthChampName','fifthChampPlays','lastDay','tier']
         self.exporter.start_exporting()
 
     def spider_closed(self, spider):
@@ -46,7 +40,7 @@ class TFTChampionDataPipeline(object):
         self.exporter.export_item(item)
         return item
 
-class TFTChampionDataImagesPipeline(ImagesPipeline):
+class TftImagenesPipeline(ImagesPipeline):
 
     def get_media_requests(self, item, info):
         return [Request(x, meta={'image_name': item["image_name"]})

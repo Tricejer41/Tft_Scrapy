@@ -1,22 +1,25 @@
-# Proyecto Scrapy TFTChampionData
+# Tutorial Scrapy; Extraer información de Mercado Libre
 
-![Logo de Scrapy](https://repository-images.githubusercontent.com/529502/dab2bd00-0ed2-11eb-8588-5e10679ace4d)
+Si quieres ver como se realizo este proyecto puedes verlo en video: https://goo.gl/73crqm
 
-## Descripción
+Si tienes alguna duda, puedes crear una pregunta en: [Issues](https://github.com/luisramirez-m/mercadolibre-scrapy/issues "Issues")
 
-TFTChampionData es un proyecto Scrapy diseñado para recopilar datos de jugadores y campeones de TFT (Teamfight Tactics) desde el sitio web [lolchess.gg](https://lolchess.gg/). El proyecto extrae información valiosa sobre el rendimiento de los jugadores y sus campeones en el modo clasificado.
+## Modificaciones:
 
-## Estructura del Proyecto
 
-- `TFT_Meta/` - Directorio raíz del proyecto.
-  - `tft_items` - Archivo con los resultados del scrapping.
-  - `scrapy.cfg` - Archivo de configuración de Scrapy.
-  - `tft_scrapy/` - Directorio principal del proyecto.
-    - `items.py` - Definiciones de elementos de datos.
-    - `middlewares.py` - Middleware del proyecto (opcional).
-    - `pipelines.py` - Pipelines para el procesamiento de datos.
-    - `settings.py` - Configuraciones del proyecto Scrapy.
-    - `spiders/` - Directorio que contiene las arañas del proyecto.
-      - `__init__.py` - Archivo de inicialización de arañas.
-      - `spider.py` - Araña que realiza la extracción de datos.
+### [0.0.3] - 2017-09-13
+- Cambios para el nuevo diseño de Mercado Libre
+- Se removieron muchos campos/variables que Mercado Libre ya no usa
 
+
+### [0.0.2] - 2017-03-12
+- Bajar imágenes del producto
+  - Recuerda cambiar en el archivo settings.py tu ruta donde quieres que se descargen las imágenes:
+
+    ```
+    IMAGES_STORE = '/URL/DE/TU/DIRECTORIO/imagenes'
+    ```
+
+### [0.0.1] - 2017-03-11
+- Primera version
+- Tutorial en video

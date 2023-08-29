@@ -1,23 +1,22 @@
 # -*- coding: utf-8 -*-
 
-# Define aquí los modelos para tus elementos extraídos
+# Define here the models for your scraped items
 #
-# Consulta la documentación en:
+# See documentation in:
 # http://doc.scrapy.org/en/latest/topics/items.html
 
 import scrapy
 
-class TFTChampionData(scrapy.Item):
-    # Define los campos para tu elemento aquí, por ejemplo:
-    # nombre = scrapy.Field()
 
-    # Información del jugador
+class TftItem(scrapy.Item):
+    # define the fields for your item here like:
+    # name = scrapy.Field()
+
+    #info de producto
     summoner = scrapy.Field()
     lps = scrapy.Field()
     wins = scrapy.Field()
     tops = scrapy.Field()
-
-    # Información sobre los campeones más jugados
     firstChampName = scrapy.Field()
     firstChampPlays = scrapy.Field()
     secondChampName = scrapy.Field()
@@ -28,7 +27,5 @@ class TFTChampionData(scrapy.Item):
     fourthChampPlays = scrapy.Field()
     fifthChampName = scrapy.Field()
     fifthChampPlays = scrapy.Field()
-
-    # Información adicional
     lastDay = scrapy.Field()
     tier = scrapy.Field()
